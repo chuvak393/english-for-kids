@@ -1,0 +1,49 @@
+.switch-btn {
+    display: inline-block;
+    width: 100px;
+    height: 38px;
+    border-radius: 19px;
+    background: #bfbfbf;
+    z-index: 0;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    left: 80%;
+    top: 28px;
+    transition-duration: .3s;
+    background-color: $color-switch-train;
+    box-shadow: 0 4px 6px rgba(0,0,0,.3);
+    &::after {
+      content: "";
+      height: 32px; 
+      width: 32px;
+      border-radius: 17px;
+      background: rgb(211, 240, 211);
+      top: 3px;
+      left: 3px;
+      transition-duration: .3s;
+      position: absolute;
+      z-index: 1;
+      box-shadow: 0 3px 5px rgba(0,0,0,.3);
+    }
+    &::before {
+      content: "Train";
+      @include font ($size: 20px, $weight: bold);
+      position: relative;
+      color: white;
+      top: 9px;
+      left: 42px;
+    } 
+}
+
+.switch-on {
+    background: $color-switch-play;
+    box-shadow: 0 4px 6px rgba(0,0,0,.3);
+    &::after {
+      left: 65px;
+    }
+    &::before {
+      content: "Play";
+      left: 13px
+    }
+}

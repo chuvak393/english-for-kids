@@ -1,0 +1,27 @@
+.nav {
+  position: fixed;
+  width: 22%;
+  min-height: 100%;
+  background-color: $color-bg-menu-train;
+  box-shadow: 0 0px 11px rgba(0, 0, 0, 0.5);
+  left: -23%;
+  transition-duration: .8s;
+}
+
+.nav-active {
+  left: 0%;
+  transition-duration: .8s;
+}
+
+.nav-active-play {
+  background-color: $color-bg-menu-play;
+}
+
+.navigation {
+  margin-top: 60%;
+  margin-left: 33%;
+}
+
+.navigation-links {
+  cursor: pointer;
+}

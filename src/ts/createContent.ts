@@ -25,10 +25,10 @@ const createContent = (category: string) => {
   };
   renderCard();
   if (category === 'main') {
-    let main: boolean = true;
+    Boolean(localStorage.setItem('main', 'True'));
   }
   else {
-    let main: boolean = false;
+    Boolean(localStorage.setItem('main', ''));
   }
 }
 

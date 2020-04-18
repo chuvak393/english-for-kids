@@ -17,6 +17,7 @@ export class createCard {
     template += '</div>';
     template += `<div class="card_description">`;
     template += `<span class="card_text">${this.word}</span>`;
+    template += `<div class="card_invisible"><span class="text_hidden">${this.word.toLowerCase()}</span></div>`;
     template += `</div>`;
     div.innerHTML = template;
     return div;

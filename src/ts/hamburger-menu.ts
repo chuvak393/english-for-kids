@@ -1,8 +1,17 @@
 import { createContent } from "./createContent";
-
 const hamburger: HTMLElement = document.querySelector('.icon');
 const nav: HTMLElement = document.querySelector('.nav');
-console.log(main);
+const container: HTMLElement = document.querySelector('.content__container');
+
+function mainCategory(event: Event): void {
+  const categoryName: string = event.target.firstChild.innerText;
+  if (Boolean(localStorage.getItem('main'))) {
+    if (event.target.className === 'card_invisible') {
+      createContent(categoryName)
+    }
+  }
+}
+
 
 function hamb(): void{
   if (hamburger.classList.contains('hamb-active')) {
@@ -15,9 +24,14 @@ function hamb(): void{
 }
 
 function menu(event: Event): void{
-  const eventTarget: string = event.target.innerText.toLowerCase();
-  createContent(eventTarget)
+  const categoryName: string = event.target.innerText.toLowerCase();
+  createContent(categoryName)
+  document.querySelectorAll('.navigation-links').forEach((elem) => {
+    elem.className = 'navigation-links'
+  });
+  event.target.classList.add('navigation-links_active')
 }
 
 hamburger.addEventListener('click', hamb);
-nav.addEventListener('click', menu)
+nav.addEventListener('click', menu);
+container.addEventListener('click', mainCategory);

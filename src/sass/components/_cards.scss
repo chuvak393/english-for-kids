@@ -21,6 +21,7 @@
   flex-wrap: wrap;
   border-radius: 7px;
   box-shadow: 0 6px 5px rgba(0,0,0,.5);
+  z-index: 1;
 }
 
 .card_image {
@@ -30,9 +31,22 @@
   box-shadow: 0 6px 5px rgba(0,0,0,.2);
 }
 
+.card_description {
+  margin-top: 20px;
+}
 
 .card_text {
   padding-left: 70px;
   font-weight: bold;
   color: white;
+}
+
+.card_invisible {
+  width: 180px;
+  height: 270px;
+  margin-top: -223px;
+}
+
+.text_hidden {
+  display: none;
 }

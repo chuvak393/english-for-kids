@@ -1,11 +1,12 @@
 .nav {
   position: fixed;
-  width: 22%;
+  width: 16%;
   min-height: 100%;
   background-color: $color-bg-menu-train;
   box-shadow: 0 0px 11px rgba(0, 0, 0, 0.5);
   left: -23%;
   transition-duration: .8s;
+  z-index: 1;
 }
 
 .nav-active {
@@ -19,9 +20,19 @@
 
 .navigation {
   margin-top: 60%;
-  margin-left: 33%;
+  margin-left: 23%;
+}
+
+.navigation_menu {
+  margin-bottom: 5px;
 }
 
 .navigation-links {
   cursor: pointer;
+  color: white;
+  font-size: 1.3rem;
+}
+
+.navigation-links_active {
+  text-decoration: underline;
 }

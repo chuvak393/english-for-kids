@@ -22,4 +22,8 @@ export class createCard {
     div.innerHTML = template;
     return div;
   }
+  audioPlay() {
+    let audio = new Audio(this.audio);
+    audio.play();
+  }
 }

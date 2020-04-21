@@ -1,6 +1,10 @@
 import cards from './cards';
 
 export class createCard {
+  word: string;
+  translation: string;
+  image: string;
+  audio: string;
   constructor({word, translation, image, audio}) {
     this.word = word;
     this.translation = translation;
@@ -8,22 +12,33 @@ export class createCard {
     this.audio = audio;
   }
     card() {
-    let template: string = '';
-    let div: HTMLElement = document.createElement('div');
-    div.classList.add('card');
-    div.id = this.word;
-    template += '<div class="card_image_container>"';
-    template += `<b><img class='card_image' src=${this.image} alt=${this.word}>`
-    template += '</div>';
-    template += `<div class="card_description">`;
-    template += `<span class="card_text">${this.word}</span>`;
-    template += `<div class="card_invisible"><span class="text_hidden">${this.word.toLowerCase()}</span></div>`;
-    template += `</div>`;
-    div.innerHTML = template;
-    return div;
-  }
-  audioPlay() {
-    let audio = new Audio(this.audio);
-    audio.play();
+      let template: string = '';
+      let div: HTMLElement = document.createElement('div');
+      div.classList.add('card');
+      div.id = this.word;
+      template += '<div class="front">'
+      template += '<div class="card_image_container>"';
+      template += `<b><img class='card_image' src=${this.image} alt=${this.word}>`
+      template += '</div>';
+      template += `<div class="card_description">`;
+      template += `<span class="card_text">${this.word}</span>`;
+      // template += `<div class="card_invisible"><span class="text_hidden">${this.word.toLowerCase()}</span></div>`;
+      if (this.audio) {
+        template += '<img class="rotate-card" src="./img/rotate.png" alt="Get translate">'  
+        }
+      template += `</div>`
+      template += `</div>`;
+      if (this.audio) {
+        template += `<div class="back">`;
+        template += '<div class="card_image_container>"';
+        template += `<b><img class='card_image' src=${this.image} alt=${this.word}>`;
+        template += `</div>`;
+        template += `<div class="card_description">`;
+        template += `<span class="card_text">${this.translation}</span>`;
+        template += `</div>`;
+        template += `</div>`;
+      }
+      div.innerHTML = template;
+      return div;
   }
 }

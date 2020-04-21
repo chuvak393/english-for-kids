@@ -21,7 +21,7 @@
   flex-wrap: wrap;
   border-radius: 7px;
   box-shadow: 0 6px 5px rgba(0,0,0,.5);
-  z-index: 1;
+
 }
 
 .card_image {
@@ -29,10 +29,13 @@
   height: 200px;
   border-radius: 7px 7px 0px 0px;
   box-shadow: 0 6px 5px rgba(0,0,0,.2);
+  object-fit: cover;
+  z-index: -1;
 }
 
 .card_description {
   margin-top: 20px;
+  z-index: -1;
 }
 
 .card_text {
@@ -41,12 +44,51 @@
   color: white;
 }
 
-.card_invisible {
-  width: 180px;
-  height: 270px;
-  margin-top: -223px;
+// .card_invisible {
+//   width: 180px;
+//   height: 270px;
+//   margin-top: -223px;
+// }
+
+// .text_hidden {
+//   display: none;
+// }
+
+.rotate-card {
+  width: 23px;
+  margin-left: 38px;
 }
 
-.text_hidden {
-  display: none;
+.front {
+  transform: rotateY(0deg);
+  transition-duration: .5s;
+  backface-visibility: hidden;
 }
+
+.back {
+  transform: rotateY(180deg);
+  position: relative;
+  top: -251px;
+  transition-duration: .5s;
+  backface-visibility: hidden;
+}
+
+.translate {
+  transition-duration: 1s;
+  transform-style: flat;
+  transform: rotateY(180deg);
+  .front {
+    transition-duration: 1s;
+    transform-style: flat;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+  }
+  .back {
+    transition-duration: 1s;
+    transform-style: flat;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transform: scale(-1, 1)
+  }
+}
+

@@ -6,22 +6,19 @@
 
 .content__container {
   display: flex;
-  margin: 100px 0px 100px 50px;
+  margin: 5% -1%;
   flex-wrap: wrap;
   max-width: 920px;
 }
 
 .card {
-  background-color: $color-switch-train;
   width: 180px;
   height: 270px;
   margin-right: 50px;
   margin-top: 35px;
   display: flex;
   flex-wrap: wrap;
-  border-radius: 7px;
-  box-shadow: 0 6px 5px rgba(0,0,0,.5);
-
+  cursor: pointer;
 }
 
 .card_image {
@@ -44,15 +41,6 @@
   color: white;
 }
 
-// .card_invisible {
-//   width: 180px;
-//   height: 270px;
-//   margin-top: -223px;
-// }
-
-// .text_hidden {
-//   display: none;
-// }
 
 .rotate-card {
   width: 23px;
@@ -63,32 +51,49 @@
   transform: rotateY(0deg);
   transition-duration: .5s;
   backface-visibility: hidden;
+  background-color: $color-switch-train;
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  box-shadow: 0 6px 5px rgba(0,0,0,.5);
 }
 
 .back {
   transform: rotateY(180deg);
   position: relative;
-  top: -251px;
+  top: -271px;
   transition-duration: .5s;
   backface-visibility: hidden;
+  background-color: $color-switch-train;
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  box-shadow: 0 6px 5px rgba(0,0,0,.5);
 }
+
 
 .translate {
-  transition-duration: 1s;
-  transform-style: flat;
-  transform: rotateY(180deg);
   .front {
-    transition-duration: 1s;
-    transform-style: flat;
     transform: rotateY(180deg);
-    backface-visibility: hidden;
   }
   .back {
-    transition-duration: 1s;
-    transform-style: flat;
-    transform: rotateY(180deg);
-    backface-visibility: hidden;
-    transform: scale(-1, 1)
+    transform: rotateY(0deg);
   }
 }
 
+
+.card_play {
+  overflow: hidden;
+  &.card {
+    height: 200px;
+  }
+  .card_image {
+    border-radius: 7px;
+  }
+  .back {
+    display: none;
+  }
+  .card_description {
+    display: none;
+  }
+}

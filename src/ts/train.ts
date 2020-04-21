@@ -61,6 +61,9 @@ function cardClick(event: Event): void {
     if (!Boolean(localStorage.getItem('main'))) {
       if (event.target.classList.contains('rotate-card')) {
         cardRotate(event)
+        event.target.closest('.card').onmouseleave = () => {
+          event.target.closest('.card').classList.remove('translate')
+        }
       }
       else playAudio(event)
     }

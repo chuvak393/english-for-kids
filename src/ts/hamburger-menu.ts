@@ -7,10 +7,9 @@ const container: HTMLElement = document.querySelector('.content__container');
 
 function mainCategory(event: Event): void {
   if (Boolean(localStorage.getItem('main'))) {
-    if (event.target.closest('.card').className === 'card') {
+    if (event.target.closest('.card').className === 'card main') {
       let categoryName: string = event.target.closest('.card').id.toLowerCase();
       createContent(categoryName)
-      localStorage.setItem('category', categoryName)
     }
   }
 }
@@ -34,7 +33,6 @@ function menu(event: Event): void{
       elem.className = 'navigation-links'
       event.target.classList.add('navigation-links_active')
     });
-    localStorage.setItem('category', categoryName)
   }
   else hamb()
 }

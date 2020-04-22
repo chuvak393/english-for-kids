@@ -11,6 +11,20 @@
   max-width: 920px;
 }
 
+.category {
+  position: absolute;
+  top: -10px;
+  left: 600px;
+}
+
+.category_text {
+  color: $color-switch-train;
+  font-size: 3rem;
+}
+.category_text-play {
+  color: $color-switch-play;
+}
+
 .card {
   width: 180px;
   height: 270px;
@@ -19,6 +33,7 @@
   display: flex;
   flex-wrap: wrap;
   cursor: pointer;
+  transition-duration: 1s;
 }
 
 .card_image {
@@ -86,9 +101,9 @@
   overflow: hidden;
   &.card {
     height: 200px;
-  }
-  .card_image {
+    transition-duration: 1s;
     border-radius: 7px;
+    box-shadow: 0 6px 5px rgba(0,0,0,.5);
   }
   .back {
     display: none;

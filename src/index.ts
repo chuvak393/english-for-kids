@@ -3,8 +3,10 @@ import './ts/hamburger-menu';
 import './ts/switcher';
 import './ts/createCards';
 import './ts/train'
-import { createCard } from './ts/createCards';
+import './ts/play'
 import { createContent } from './ts/createContent';
-// import { sound } from './ts/train';
+import Sound from './ts/audio'
 
 createContent('main');
+
+

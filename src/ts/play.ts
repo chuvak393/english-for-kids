@@ -5,11 +5,12 @@ export function game() {
   if (document.querySelector('.switch-btn')?.classList.contains('switch-on')) {
     let category: string = document.querySelector('.category_text')?.innerHTML;
     let button: HTMLButtonElement = document.querySelector('.button-game')
+    let container: HTMLDivElement = document.querySelector('.content__container')
     let sound = new Sound(category)
     let audioList = sound.soundGenerate()
     let i: number = 0;
     let errorCounter: number = 0;
-    let currentAudio = sound.soundPlay(audioList, i)
+    let currentAudio = sound.soundPlay(audioList, i);
     button.onclick = () => {
       currentAudio = sound.soundPlay(audioList, i)
       if (!button.classList.contains('button-repeat')) {
@@ -31,14 +32,22 @@ export function game() {
               setTimeout(() => currentAudio.play(), 1000)
             }
             else {
-              let error = new Audio('./audio/error.mp3')
-              error.play()
+              let error = new Audio('./audio/error.mp3');
+              error.play();
               errorCounter += 1;
             }
             if (i > 7) {
-              let success = new Audio('./audio/success.mp3')
-              success.play()
-              console.log(`Ошибок: ${errorCounter}`)
+              let success = new Audio('./audio/success.mp3');
+              success.play();
+              console.log(`Ошибок: ${errorCounter}`);
+              if (errorCounter === 0) {
+                container.innerHTML = '<img class="image_success" src="./img/success.jpg" alt="Success">'
+                // container.innerHTML = 'МОЛОДЕЦ'
+              }
+              else {
+                // container.innerHTML = 'ЕЩЕ РАЗ ПОПРОБУЙ'
+                container.innerHTML = '<img class="image_failure" src="./img/failure.jpg" alt="Failure"'
+              }
             }
           }
         }

@@ -56,6 +56,13 @@
   color: white;
 }
 
+.card_correct {
+  .card_image {
+    opacity: 0.5;
+    cursor: no-drop;
+  }
+}
+
 
 .rotate-card {
   width: 23px;
